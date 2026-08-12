@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-vscode.remote-explorer",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-ssh-edit",
+    "esbenp.prettier-vscode",
+    "timheuer.pfx-view",
+    "mjmade.peek509",
+    "jlcs-es.x509-parser",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "test.test"
+	]
+}
