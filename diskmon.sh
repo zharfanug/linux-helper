@@ -238,10 +238,12 @@ do_add() {
 
   RECORD_DIR=/etc/diskmon
   UNIT_DIR=/etc/systemd/system
+  LOG_DIR=/var/log/diskmon
   RECORD_FILE="${RECORD_DIR}/${NAME}"
   UNIT_FILE="${UNIT_DIR}/diskmon@${NAME}.service"
 
   mkdir -p "$RECORD_DIR"
+  mkdir -p "$LOG_DIR"
 
   cat >"$RECORD_FILE" <<EOF
 # Managed by diskmon. Do not edit manually.
@@ -255,6 +257,8 @@ After=local-fs.target
 
 [Service]
 Type=simple
+Environment=LOG_FILE=/var/log/diskmon/${NAME}.log
+Environment=LOG_TO_FILE=true
 ExecStart=${SCRIPT_DIR}/${SCRIPT_NAME} -x -i ${INTERVAL} -f ${FS_PATH} -t ${THRESHOLD}
 Restart=on-failure
 RestartSec=5
