@@ -22,6 +22,7 @@ Requires `sudo`, and `curl` or `wget` for the online install.
 
 - **durank.sh** — show disk usage under a directory, sorted largest to smallest.
 - **rotateit.sh** — create/manage a `/etc/logrotate.d` config that rotates a log daily and archives each rotated copy as a dated gzip file, relying on logrotate's own daily cron trigger.
+- **diskmon.sh** — monitor disk usage of a path on an interval and warn past a threshold; installs a systemd service per monitored path (`-a NAME`), with a foreground `-x` mode that doubles as a dry run.
 - **git-update.sh** — commit and push the working tree, moving a `latest` tag to the new commit, without touching history.
 - **git-merge.sh** — squash the entire repo history into a single commit and force-push it.
 - **git-tag-update.sh** — create or move a tag to the current commit and push it.
