@@ -253,7 +253,6 @@ write_config() {
 "${LOG_PATH}" {
   daily
   missingok
-  notifempty
   compress
   compressoptions -${COMPRESS_LEVEL}
   rotate 1
