@@ -106,7 +106,7 @@ Modes:
   -rm NAME          Remove a diskmon service and its config.
   -l                List installed diskmon instances.
   -h, --help        Show this help message
-  (no args)         Show current disk usage of PATH once (info)
+  (no args)         Same as -l: list installed diskmon instances
 
 Options:
   -i INTERVAL       Check every INTERVAL. A number with an optional suffix:
@@ -118,7 +118,6 @@ Options:
 
 Examples:
   $SCRIPT_NAME
-  $SCRIPT_NAME -x
   $SCRIPT_NAME -x -i 5m -f /var -t 80
   $SCRIPT_NAME -a var -i 5m -f /var -t 80
   $SCRIPT_NAME -l
@@ -343,10 +342,8 @@ do_remove() {
 }
 
 if [ $# -eq 0 ]; then
-  INTERVAL=1h
-  FS_PATH=/
-  THRESHOLD=85
-  check_once
+  printf 'Run "%s -h" for help\n' "$SCRIPT_NAME"
+  do_list
   exit 0
 fi
 
